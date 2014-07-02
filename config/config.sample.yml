@@ -1,0 +1,11 @@
+development:
+  vippredictor_user: aaa
+  vippredictor_pass: aaa
+
+test:
+  vippredictor_user: aaa
+  vippredictor_pass: aaa
+
+production:
+  vippredictor_user: aaa
+  vippredictor_pass: aaa
