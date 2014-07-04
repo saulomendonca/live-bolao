@@ -1,0 +1,175 @@
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20140702022256)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar(255), "name" varchar(255), "vippredictor_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140702022256"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20140703123755)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar(255), "name" varchar(255), "vippredictor_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140703123755"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20140703123755)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar(255), "name" varchar(255), "vippredictor_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140703123755"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.207838"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Maria Célia"], ["updated_at", "2014-07-04 01:08:33.207838"], ["vippredictor_id", 348210]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.215197"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-te-sento-a-vara-moleque-baitola.jpg"], ["name", "Murilo Silva Farias"], ["updated_at", "2014-07-04 01:08:33.215197"], ["vippredictor_id", 348385]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.217111"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Fernando Barreto"], ["updated_at", "2014-07-04 01:08:33.217111"], ["vippredictor_id", 415810]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.218833"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-Avatar(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12).jpg"], ["name", "Alexandre Pedrosa Carneiro"], ["updated_at", "2014-07-04 01:08:33.218833"], ["vippredictor_id", 153511]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.220639"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-pjetopo.png"], ["name", "Mateus  Provensi"], ["updated_at", "2014-07-04 01:08:33.220639"], ["vippredictor_id", 107350]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.222567"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-008.png"], ["name", "Jideão Filho"], ["updated_at", "2014-07-04 01:08:33.222567"], ["vippredictor_id", 95099]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.225144"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Pedro Henrique"], ["updated_at", "2014-07-04 01:08:33.225144"], ["vippredictor_id", 348760]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.227646"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Aluísio Aires Aguiar"], ["updated_at", "2014-07-04 01:08:33.227646"], ["vippredictor_id", 258937]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.233800"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-7dbf4f73-61f7-43b4-8e62-575c532b8ee2.jpg"], ["name", "Leandro C. Oliveira"], ["updated_at", "2014-07-04 01:08:33.233800"], ["vippredictor_id", 101770]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.235838"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-20131011_110541000_iOS(0)(1).jpg"], ["name", "Aloísio Gomes"], ["updated_at", "2014-07-04 01:08:33.235838"], ["vippredictor_id", 153738]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.237981"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Luiz Henrique Maia"], ["updated_at", "2014-07-04 01:08:33.237981"], ["vippredictor_id", 293033]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.239998"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-007376ab-220a-4dea-a751-4be9b05895ca.jpeg"], ["name", "claudio"], ["updated_at", "2014-07-04 01:08:33.239998"], ["vippredictor_id", 344150]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.241658"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Marielli de Paula"], ["updated_at", "2014-07-04 01:08:33.241658"], ["vippredictor_id", 348608]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.243508"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-independiente_rivadavia.jpg"], ["name", "Riva"], ["updated_at", "2014-07-04 01:08:33.243508"], ["vippredictor_id", 348646]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.245773"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-cd00f195-3300-4c5e-9106-0770f393ee89.gif"], ["name", "Humberto Magalhães Ayres"], ["updated_at", "2014-07-04 01:08:33.245773"], ["vippredictor_id", 90341]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.247692"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "FERNANDO MAGALHÃES"], ["updated_at", "2014-07-04 01:08:33.247692"], ["vippredictor_id", 212275]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.249412"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-Robnaldo.jpg"], ["name", "Robnaldo José Santos Alves"], ["updated_at", "2014-07-04 01:08:33.249412"], ["vippredictor_id", 70917]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.251127"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-459d5041-0f3b-473f-b525-8a2c2d817c30.gif"], ["name", "karine luiza"], ["updated_at", "2014-07-04 01:08:33.251127"], ["vippredictor_id", 437960]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.252887"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-b7276360-9281-4d35-827d-4f729a35d904.jpg"], ["name", "Rafael Palladino"], ["updated_at", "2014-07-04 01:08:33.252887"], ["vippredictor_id", 258661]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.254583"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-cedf4ede-0042-4dde-b8ff-51e671ef2b31.jpg"], ["name", "Rui César Barbosa Júnior"], ["updated_at", "2014-07-04 01:08:33.254583"], ["vippredictor_id", 367692]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.256736"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-0687d203-8c09-4ebd-b269-481ec6db3210.jpg"], ["name", "woshington rodrigues da silva"], ["updated_at", "2014-07-04 01:08:33.256736"], ["vippredictor_id", 356929]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.258682"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Angela Marisa G Resende Oliveira"], ["updated_at", "2014-07-04 01:08:33.258682"], ["vippredictor_id", 107038]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.260423"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Saulo Mendonça"], ["updated_at", "2014-07-04 01:08:33.260423"], ["vippredictor_id", 0]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.262160"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-DSC03635.JPG"], ["name", "Heliton Lima"], ["updated_at", "2014-07-04 01:08:33.262160"], ["vippredictor_id", 348369]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.263942"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-0493dc4c-4b04-4870-8641-8546005b3102.jpg"], ["name", "Dorizelha  Maria da Conceição Rocha"], ["updated_at", "2014-07-04 01:08:33.263942"], ["vippredictor_id", 33441]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.265693"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Paulo Goiás"], ["updated_at", "2014-07-04 01:08:33.265693"], ["vippredictor_id", 89291]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.267857"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-128909.jpg"], ["name", "Alexandre  - This Is Sparta!"], ["updated_at", "2014-07-04 01:08:33.267857"], ["vippredictor_id", 153724]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.269805"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-tc.jpg"], ["name", "T  Ú  L  I  O"], ["updated_at", "2014-07-04 01:08:33.269805"], ["vippredictor_id", 44688]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.271559"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-goiatuba.jpeg"], ["name", "Jorivê F. Borges"], ["updated_at", "2014-07-04 01:08:33.271559"], ["vippredictor_id", 194487]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.273374"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-b4d4626c-c76d-4b55-8476-fb03a4f47f8d.jpg"], ["name", "Carlos Moura"], ["updated_at", "2014-07-04 01:08:33.273374"], ["vippredictor_id", 174041]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.275221"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-4074f9e3-bde6-4868-b4c5-ee7022b2d0d8.jpg"], ["name", "Fabiano de Almeida e Oliveira"], ["updated_at", "2014-07-04 01:08:33.275221"], ["vippredictor_id", 276398]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.277009"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Auro Henrique"], ["updated_at", "2014-07-04 01:08:33.277009"], ["vippredictor_id", 357186]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.279181"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-0cafc512-77e7-4710-987c-052a51633f3e.jpg"], ["name", "Marcos José de Oliveira"], ["updated_at", "2014-07-04 01:08:33.279181"], ["vippredictor_id", 386061]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.281122"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Sandra Miranda"], ["updated_at", "2014-07-04 01:08:33.281122"], ["vippredictor_id", 348681]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.282903"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Sávio Sampaio"], ["updated_at", "2014-07-04 01:08:33.282903"], ["vippredictor_id", 143784]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.284672"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Marcello Pena"], ["updated_at", "2014-07-04 01:08:33.284672"], ["vippredictor_id", 223442]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.286484"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-Verdao(0)(1)(2)(3)(4).jpg"], ["name", "Anderson Abreu de Macedo"], ["updated_at", "2014-07-04 01:08:33.286484"], ["vippredictor_id", 258888]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.288262"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Luccy-Mayer Resende Borges"], ["updated_at", "2014-07-04 01:08:33.288262"], ["vippredictor_id", 132768]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.290662"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-DSC07911.JPG"], ["name", "DANIEL DIAS GOMES"], ["updated_at", "2014-07-04 01:08:33.290662"], ["vippredictor_id", 167219]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.293177"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-IMG_22259548055580.jpeg"], ["name", "Dinalva Carmo de Sá"], ["updated_at", "2014-07-04 01:08:33.293177"], ["vippredictor_id", 348363]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.295030"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-ca3890ed-e7a0-4108-8afc-b2cad933cd8d.jpg"], ["name", "Jailton Alkimin Louzada"], ["updated_at", "2014-07-04 01:08:33.295030"], ["vippredictor_id", 417326]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.296887"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Wanderlan Nunes Ramos"], ["updated_at", "2014-07-04 01:08:33.296887"], ["vippredictor_id", 119385]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.298716"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Leonardo Mendes"], ["updated_at", "2014-07-04 01:08:33.298716"], ["vippredictor_id", 356789]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-07-04 01:08:33.300535"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Luiz Carlos Vieira Rodrigues"], ["updated_at", "2014-07-04 01:08:33.300535"], ["vippredictor_id", 127246]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "image", "name", "updated_at", "vippredictor_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-07-04 01:08:33.302527"], ["image", "http://vippredictorstorage.blob.core.windows.net/vippredictor-user/min-noimage.jpg"], ["name", "Rogério Bueno"], ["updated_at", "2014-07-04 01:08:33.302527"], ["vippredictor_id", 347410]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
