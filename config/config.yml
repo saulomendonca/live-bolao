@@ -1,0 +1,17 @@
+development:
+  vippredictor_url: http://www.vippredictor.com
+  vippredictor_user: saulomendonca@gmail.com
+  vippredictor_pass: 1605sa
+  fifa_url: worldcup.sfg.io
+
+test:
+  vippredictor_url: http://www.vippredictor.com
+  vippredictor_user: saulomendonca@gmail.com
+  vippredictor_pass: 1605sa
+  fifa_url: worldcup.sfg.io
+
+production:
+  vippredictor_url: http://www.vippredictor.com
+  vippredictor_user: saulomendonca@gmail.com
+  vippredictor_pass: 1605sa
+  fifa_url: worldcup.sfg.io

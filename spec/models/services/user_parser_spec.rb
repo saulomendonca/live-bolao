@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserParser, :type => :model do
+RSpec.describe UserParser, :type => :service do
 
   before do
     @html = '

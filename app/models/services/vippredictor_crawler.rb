@@ -3,11 +3,22 @@ class VippredictorCrawler
   CONFIG = YAML.load_file(Rails.root.join('config/config.yml'))[Rails.env]
 
   def get_users_html_page
+    uri = '/en-US/Prediction/Match/34531?matchId=6245'
+    url = CONFIG["vippredictor_url"] + uri
 
-    CONFIG["vippredictor_url"]
+    return get_page(url)
+  end
 
 
-    url = '/en-US/Prediction/Match/34531?matchId=6245'
+  def get_teams_html_page
+    uri = '/en-US/Prediction/My/34531?FlgPeriod=0'
+    url = CONFIG["vippredictor_url"] + uri
+
+    return get_page(url)
+  end
+
+
+  def get_page(url)
     agent = Mechanize.new
     main_page = get_vip_predictor_main_page(agent)
 
@@ -15,6 +26,7 @@ class VippredictorCrawler
 
     return agent.get(url).content
   end
+
 
   def get_vip_predictor_main_page(agent)
     agent.get('http://www.vippredictor.com/pt-BR/Home')

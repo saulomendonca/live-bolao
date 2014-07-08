@@ -1,24 +1,58 @@
 class TeamParser
 
-  def initialize(crawler = VippredictorCrawler.new)
+  def initialize(crawler = VippredictorCrawler.new, fifa_web_service = FifaWebservice.new)
     @crawler = crawler
+    @fifa_web_service = fifa_web_service
   end
 
   def get_teams_hash
-    html = @crawler.get_users_html_page
-    parse_users_html(html)
+    html = @crawler.get_teams_html_page
+    parse_teams_html(html)
   end
 
 
   def parse_teams_html(html)
-    doc = Nokogiri::HTML(html)
-    linhas =  doc.css('//div.geral_padd/ul.list_palpite_partida/li.palpite_item')
 
-    return linhas.map do |linha|
-      name =  linha.css("td.tbl_bolao_td").text.gsub("/n", "").strip
-      id = linha.css("div.float_l")[5].css("a")[0]["href"].gsub(/.*uId=/, "")
-      img = linha.css("div.float_l/td/a/img")[0]["src"]
-      {name: name, vippredictor_id: id, image: img}
+    doc = Nokogiri::HTML(html)
+    lines =  doc.css('//table.tbl_palpite//tr')
+    teams = []
+
+    lines.each do |line|
+      next if teams.size == 32
+      team = parse_line(line)
+      teams << team if team && !teams.find{ |t| t[:code_fifa] == team[:code_fifa]}
     end
+
+    return teams
   end
+
+  def parse_line(line_html)
+    if line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]
+
+      code_vip = line_html.css("td.tbl_palpite-timeA")[0].css("a").text
+      # puts "*" * 100
+      # puts code_vip
+      img = line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]["src"]
+
+      team_code = TeamCodeTranslate.get_fifa_code(code_vip)
+
+      # team = teams_fifa.find{ |t| t[:code] == team_code}
+      return {:code_fifa => team_code, :code_vippredictor => code_vip, :name => "teste", :image => img}
+      # return {:code_fifa => team_code, :code_vippredictor => code_vip, :name => team[:name], :image => img}
+    end
+    # if line_html.css("td.tbl_palpite-escudo")[1].css("img")[0]
+
+    #   code_vip = line_html.css("td.tbl_palpite-timeA")[0].css("a").text
+    #   img = line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]["src"]
+
+    #   team_code = TeamCodeTranslate.get_fifa_code(code_vip)
+
+    #   team = teams_fifa.find{ |t| t[:code] == team_code}
+    #   {:code_fifa => team_code, :code_vippredictor => code_vip, :name => team[:name], :image => img}
+
+    #   teams << parse_line
+    # end
+  end
+
+
 end
