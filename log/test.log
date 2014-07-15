@@ -6656,3 +6656,470 @@ Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 11:55:08.860319"], ["status", "Status"], ["updated_at", "2014-07-15 11:55:08.860319"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#new as HTML
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "games"
+  [1m[36mTeam Load (0.2ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1[0m
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:01:55.168270"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:01:55.168270"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "games"
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTeam Load (0.2ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1[0m
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:01:55.176970"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:01:55.176970"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1[0m
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:01:55.193203"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:01:55.193203"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mGame Load (0.1ms)[0m  SELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/games" for 127.0.0.1 at 2014-07-15 09:02:13 -0300
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:02:13.276590"], ["status", "MyString"], ["updated_at", "2014-07-15 12:02:13.276590"], ["vippredictor_id", 1], ["webservice_id", 1], ["weight", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered games/_form.html.erb (28.6ms)
+  [1m[36m (2.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:02:13.350829"], ["status", "Status"], ["updated_at", "2014-07-15 12:02:13.350829"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)  [["complete", "f"], ["created_at", "2014-07-15 12:02:13.352438"], ["status", "Status"], ["updated_at", "2014-07-15 12:02:13.352438"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered games/_form.html.erb (6.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:02:13.400843"], ["status", "Status"], ["updated_at", "2014-07-15 12:02:13.400843"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#new as HTML
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/games" for 127.0.0.1 at 2014-07-15 09:02:25 -0300
+Processing by GamesController#index as HTML
+  [1m[35mGame Load (0.2ms)[0m  SELECT "games".* FROM "games"
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:02:27.282037"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:02:27.282037"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeam Load (0.2ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:02:27.291201"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:02:27.291201"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mTeam Load (0.2ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeam Load (0.2ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:02:27.310039"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:02:27.310039"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:02:44.371633"], ["status", "MyString"], ["updated_at", "2014-07-15 12:02:44.371633"], ["vippredictor_id", 1], ["webservice_id", 1], ["weight", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered games/_form.html.erb (22.2ms)
+  [1m[36m (2.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:02:44.431094"], ["status", "Status"], ["updated_at", "2014-07-15 12:02:44.431094"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)  [["complete", "f"], ["created_at", "2014-07-15 12:02:44.432513"], ["status", "Status"], ["updated_at", "2014-07-15 12:02:44.432513"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered games/_form.html.erb (10.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:02:44.489485"], ["status", "Status"], ["updated_at", "2014-07-15 12:02:44.489485"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by GamesController#new as HTML
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/games" for 127.0.0.1 at 2014-07-15 09:11:06 -0300
+Processing by GamesController#index as HTML
+  [1m[35mGame Load (0.2ms)[0m  SELECT "games".* FROM "games"
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35mTeam Load (0.2ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:11:26.099721"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:11:26.099721"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "games"[0m
+  [1m[35m (1.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:11:26.107860"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:11:26.107860"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35mTeam Load (0.1ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTeam Load (0.2ms)[0m  SELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'CRO' LIMIT 1
+  [1m[36mTeam Load (0.1ms)[0m  [1mSELECT  "teams".* FROM "teams"  WHERE "teams"."code_fifa" = 'BRA' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("away_team_id", "complete", "created_at", "date", "home_team_id", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["away_team_id", 24], ["complete", "f"], ["created_at", "2014-07-15 12:11:26.124678"], ["date", "2014-06-12"], ["home_team_id", 12], ["status", "future"], ["updated_at", "2014-07-15 12:11:26.124678"], ["vippredictor_id", 0], ["webservice_id", 1], ["weight", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT  "games".* FROM "games"   ORDER BY "games"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:11:26.129886"], ["status", "MyString"], ["updated_at", "2014-07-15 12:11:26.129886"], ["vippredictor_id", 1], ["webservice_id", 1], ["weight", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered games/_form.html.erb (20.1ms)
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games"[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:11:26.190150"], ["status", "Status"], ["updated_at", "2014-07-15 12:11:26.190150"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)  [["complete", "f"], ["created_at", "2014-07-15 12:11:26.191575"], ["status", "Status"], ["updated_at", "2014-07-15 12:11:26.191575"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered games/_form.html.erb (6.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "games" ("complete", "created_at", "status", "updated_at", "vippredictor_id", "webservice_id", "weight") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["complete", "f"], ["created_at", "2014-07-15 12:11:26.242324"], ["status", "Status"], ["updated_at", "2014-07-15 12:11:26.242324"], ["vippredictor_id", 2], ["webservice_id", 1], ["weight", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m

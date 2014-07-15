@@ -9,9 +9,9 @@ Bundler.require(*Rails.groups)
 module LiveVippredictor
   class Application < Rails::Application
 
-    config.autoload_paths += Dir["#{config.root}/app/models/services"]
+    config.autoload_paths << config.root.join("app/services/crawler").to_s
 
-    # config.autoload_paths << config.root.join("app/models/parsers").to_s
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
