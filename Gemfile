@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 
 gem 'mechanize'
 gem 'hpricot'
+gem 'whenever', :require => false
 
 
 group :development, :test do
