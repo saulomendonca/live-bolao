@@ -2,13 +2,13 @@
 
 FactoryGirl.define do
   factory :game do
-    web_service_id 1
+    webservice_id 1
     vippredictor_id 1
-    status "MyString"
+    status "future"
     complete false
-    weight 1
+    weight 10
     date "2014-07-08"
-    away_team nil
-    home_team nil
+    association :away_team, factory: :team, code_fifa: "BRA", name: "Brazil"
+    association :home_team, factory: :team, code_fifa: "CRO", name: "Croatia"
   end
 end

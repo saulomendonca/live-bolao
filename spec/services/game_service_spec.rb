@@ -42,6 +42,14 @@ RSpec.describe GameService, :type => :service do
     expect(Game.count).to eq 1
   end
 
+  it "should not create a game two time" do
+    expect(Game.count).to eq 0
+    @service.populate_daily_games
+    expect(Game.count).to eq 1
+    @service.populate_daily_games
+    expect(Game.count).to eq 1
+  end
+
   it "should create games with correct teams" do
     @service.populate_daily_games
     game = Game.first

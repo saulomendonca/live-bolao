@@ -4,29 +4,69 @@ class ResultService
     @fifa_webservice = fifa_webservice
   end
 
-  def populate_daily_games
+  def verify_daily_results
+    changes = false
     games_array = @fifa_webservice.get_daily_games
-    games_array.each do |jogo|
+    games_array.each do |game_hash|
 
-      web_service_id = jogo["match_number"]
-      away_team = Team.find_by_code_fifa(jogo["away_team"]["code"])
-      home_team = Team.find_by_code_fifa(jogo["home_team"]["code"])
-      weight = GamePontuationTranslate.get_pontuation_by_date(Date.today)
-      vip_predictor_id  = VippredictorService.get_vippredictor_id(web_service_id)
+      game = Game.find_by_webservice_id(game_hash["match_number"])
+      status = game_hash["status"]
+      goals_home = game_hash["home_team"]["goals"]
+      goals_away = game_hash["away_team"]["goals"]
 
-      Game.create!(
-        :status => jogo["status"],
-        :webservice_id => web_service_id,
-        :vippredictor_id => vip_predictor_id,
-        :away_team_id => away_team.id,
-        :home_team_id => home_team.id,
-        :weight => weight,
-        :complete => (jogo["status"] == "completed"),
-        :date => jogo["datetime"]
-      )
+
+      unless game
+        populate_games
+        game = Game.find_by_webservice_id(game_hash["match_number"])
+      end
+
+      return false unless game
+
+      next if status == Game::STATUS_FUTURE
+
+      if !game.result
+        create_game_result(game, goals_home, goals_away)
+        changes = true
+      end
+
+
+      if game.status != status
+        if game.status == Game::STATUS_FUTURE
+          populate_users_results
+        end
+        game.update_attributes!(:status => status)
+
+        changes = true
+      end
+
+      result = Result.find_by_game_id(game.id)
+
+      if(result.home_team_goal != goals_home || result.away_team_goal != goals_away)
+        result.update_attributes!(:home_team_goal => goals_home, :away_team_goal => goals_away)
+        changes = true
+      end
+
+    end
+
+    if changes
+      calculate_daily_score
     end
   end
 
+  def populate_games
+    game_service = GameService.new
+    game_service.populate_daily_games
+  end
 
+  def create_game_result(game, goals_home, goals_away)
+    Result.create!(:game_id => game.id, :home_team_goal => goals_home,:away_team_goal =>  goals_away)
+  end
+
+  def calculate_daily_score
+  end
+
+
+  def populate_users_results
+  end
 
 end
