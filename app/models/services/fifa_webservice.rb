@@ -4,11 +4,21 @@ class FifaWebservice
 
 
   def get_hash_teams
-    teams = []
-    req = Net::HTTP.get(CONFIG["fifa_url"], "/teams/")
-    paises = JSON.parse(req)
-    return paises.map do |jogo|
-      {code:jogo["fifa_code"], name: jogo["country"]}
-    end
+    countries = get_json("/teams")
+    countries.map! do |country|
+          {code:country["fifa_code"], name: country["country"]}
+    end if countries
+    return countries
   end
+
+  def get_daily_games
+    get_json("/matches/today")
+  end
+
+  private
+  def get_json(uri)
+    req = Net::HTTP.get(CONFIG["fifa_url"], uri)
+    JSON.parse(req)
+  end
+
 end

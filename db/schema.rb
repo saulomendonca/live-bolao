@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704183217) do
+ActiveRecord::Schema.define(version: 20140708191756) do
+
+  create_table "games", force: true do |t|
+    t.integer  "webservice_id"
+    t.integer  "vippredictor_id"
+    t.string   "status"
+    t.boolean  "complete"
+    t.integer  "weight"
+    t.date     "date"
+    t.integer  "away_team_id"
+    t.integer  "home_team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["away_team_id"], name: "index_games_on_away_team_id"
+  add_index "games", ["home_team_id"], name: "index_games_on_home_team_id"
+
+  create_table "results", force: true do |t|
+    t.integer  "home_team_goal"
+    t.integer  "away_team_goal"
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "results", ["game_id"], name: "index_results_on_game_id"
 
   create_table "teams", force: true do |t|
     t.string   "code_fifa"

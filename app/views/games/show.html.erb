@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Web service:</strong>
+  <%= @game.webservice_id %>
+</p>
+
+<p>
+  <strong>Vippredictor:</strong>
+  <%= @game.vippredictor_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @game.status %>
+</p>
+
+<p>
+  <strong>Complete:</strong>
+  <%= @game.complete %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @game.weight %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @game.date %>
+</p>
+
+<p>
+  <strong>Away team:</strong>
+  <%= @game.away_team %>
+</p>
+
+<p>
+  <strong>Home team:</strong>
+  <%= @game.home_team %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

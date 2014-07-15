@@ -17,5 +17,4 @@ class GamePontuationTranslate
     code = PONTUATION[date]
     code ||= 0
   end
-
 end
