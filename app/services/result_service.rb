@@ -32,7 +32,7 @@ class ResultService
 
       if game.status != status
         if game.status == Game::STATUS_FUTURE
-          populate_users_results
+          populate_users_predictions(game)
         end
         game.update_attributes!(:status => status)
 
@@ -66,7 +66,8 @@ class ResultService
   end
 
 
-  def populate_users_results
+  def populate_users_predictions(game)
+    PredictionService.new(game.id).populate_users_predictions
   end
 
 end

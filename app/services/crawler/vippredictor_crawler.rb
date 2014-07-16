@@ -3,7 +3,8 @@ class VippredictorCrawler
   CONFIG = YAML.load_file(Rails.root.join('config/config.yml'))[Rails.env]
 
   def get_users_html_page
-    uri = '/en-US/Prediction/Match/34531?matchId=6245'
+    id = CONFIG["vippredictor_group_id"]
+    uri = "/en-US/Prediction/Match/#{id}?matchId=6245"
     url = CONFIG["vippredictor_url"] + uri
 
     return get_page(url)
@@ -11,7 +12,16 @@ class VippredictorCrawler
 
 
   def get_teams_html_page
-    uri = '/en-US/Prediction/My/34531?FlgPeriod=0'
+    id = CONFIG["vippredictor_group_id"]
+    uri = "/en-US/Prediction/My/#{id}?FlgPeriod=0"
+    url = CONFIG["vippredictor_url"] + uri
+
+    return get_page(url)
+  end
+
+  def get_user_game_results_html_page(game_id)
+    id = CONFIG["vippredictor_group_id"]
+    uri = "/en-US/Prediction/Match/#{id}?matchId=#{game_id}"
     url = CONFIG["vippredictor_url"] + uri
 
     return get_page(url)

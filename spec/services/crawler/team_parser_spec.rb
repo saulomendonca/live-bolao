@@ -5,10 +5,10 @@ RSpec.describe TeamParser, :type => :service do
   before do
     crawler = VippredictorCrawler.new
     # doc = crawler.get_teams_html_page
-    # file = File.open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helper/team.html", "w")
+    # file = File.open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/team.html", "w")
     # file.puts doc.force_encoding('ISO-8859-1')
 
-    @html = open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helper/team.html")
+    @html = open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/teams.html")
 
     crawler = double("VippredictorCrawler")
     allow(crawler).to receive(:get_teams_html_page).and_return(@html)

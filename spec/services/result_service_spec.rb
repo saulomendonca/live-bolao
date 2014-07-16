@@ -91,7 +91,7 @@ RSpec.describe ResultService, :type => :service do
     @games[0]["match_number"] = "21";
 
     expect(@service).to receive(:calculate_daily_score)
-    expect(@service).to receive(:populate_users_results)
+    expect(@service).to receive(:populate_users_predictions)
     @service.verify_daily_results
   end
 
@@ -101,7 +101,7 @@ RSpec.describe ResultService, :type => :service do
     @games[0]["match_number"] = "21";
 
     expect(@service).to receive(:calculate_daily_score).and_call_original
-    expect(@service).to receive(:populate_users_results).and_call_original
+    expect(@service).to receive(:populate_users_predictions).and_call_original
     @service.verify_daily_results
   end
 

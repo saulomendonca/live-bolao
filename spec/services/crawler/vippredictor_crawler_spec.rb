@@ -20,6 +20,20 @@ RSpec::Matchers.define :has_tag_with_content do |tag, content|
   end
 end
 
+RSpec::Matchers.define :has_a_list_of_tag_with_content_on_position do |tag, content, position|
+  match do |html|
+    Nokogiri::HTML(html).css(tag)[position].text == content
+  end
+
+  failure_message do |html|
+    text = Nokogiri::HTML(html).css(tag)[position].text
+    "expected that #{content}' would be the content of tag '#{tag}' in position #{position}, but receive '#{text}'"
+  end
+end
+
+
+
+
 RSpec::Matchers.define :has_tag_with_property_content do |tag, property, content|
   match do |html|
     Nokogiri::HTML(html).css(tag)[0][property] ==  content
@@ -49,6 +63,19 @@ RSpec.describe UserParser, :type => :service do
   end
 
 
+  it "should find html with list of user's game results " do
+    game_id = 10308
+    html = @crawler.get_user_game_results_html_page(game_id)
+
+    expect(html).to has_tag('//div.list_partida/ul.list_palpite_partida/li.palpite_item/div.palpite_box_partida//a')
+    expect(html).to has_a_list_of_tag_with_content_on_position('//div.list_partida/ul.list_palpite_partida/li.palpite_item/div.palpite_box_partida//a', "ALE", 0)
+    expect(html).to has_a_list_of_tag_with_content_on_position('//div.list_partida/ul.list_palpite_partida/li.palpite_item/div.palpite_box_partida//a', "ARG", 1)
+
+    expect(html).to has_tag('//div.geral_padd/ul.list_palpite_partida/li.palpite_item')
+
+  end
+
+
 
 
   it "should find login form" do
@@ -68,6 +95,5 @@ RSpec.describe UserParser, :type => :service do
     expect(logged_page.content).to has_tag_with_content('//h1.font_19/a.font-branca', "Saulo Mendonça")
   end
 
-  it "should find lines of users" do
-  end
+
 end
