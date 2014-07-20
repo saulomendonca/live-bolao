@@ -1,6 +1,7 @@
 development:
   vippredictor_url: http://www.vippredictor.com
   vippredictor_group_id: 34531
+  vippredictor_first_game_id: 6245
   vippredictor_user: saulomendonca@gmail.com
   vippredictor_pass: 1605sa
   fifa_url: worldcup.sfg.io
@@ -8,6 +9,7 @@ development:
 test:
   vippredictor_url: http://www.vippredictor.com
   vippredictor_group_id: 34531
+  vippredictor_first_game_id: 6245
   vippredictor_user: saulomendonca@gmail.com
   vippredictor_pass: 1605sa
   fifa_url: worldcup.sfg.io
@@ -15,6 +17,7 @@ test:
 production:
   vippredictor_url: http://www.vippredictor.com
   vippredictor_group_id: 34531
+  vippredictor_first_game_id: 6245
   vippredictor_user: saulomendonca@gmail.com
   vippredictor_pass: 1605sa
   fifa_url: worldcup.sfg.io

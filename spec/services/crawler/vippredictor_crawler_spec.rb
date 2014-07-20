@@ -41,7 +41,7 @@ RSpec::Matchers.define :has_tag_with_property_content do |tag, property, content
 end
 
 
-RSpec.describe UserParser, :type => :service do
+RSpec.describe UserParser, :type => :service, :speed => 'slow' do
 
   before do
     @crawler = VippredictorCrawler.new
@@ -73,6 +73,12 @@ RSpec.describe UserParser, :type => :service do
 
     expect(html).to has_tag('//div.geral_padd/ul.list_palpite_partida/li.palpite_item')
 
+  end
+
+  it "should find html with list of user's score" do
+    html = @crawler.get_score_html_page
+
+    expect(html).to has_tag('//div.geral_padd/ul.list_palpite_partida/li.palpite_item')
   end
 
 

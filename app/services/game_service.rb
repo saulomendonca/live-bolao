@@ -5,6 +5,8 @@ class GameService
   end
 
   def populate_daily_games
+    clean_games
+
     games_array = @fifa_webservice.get_daily_games
     games_array.each do |jogo|
 
@@ -27,6 +29,10 @@ class GameService
         )
       end
     end
+  end
+
+  def clean_games
+    Game.destroy_all
   end
 
 

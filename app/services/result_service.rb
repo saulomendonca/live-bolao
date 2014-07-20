@@ -63,6 +63,7 @@ class ResultService
   end
 
   def calculate_daily_score
+    GameScoreService.new().calculate_daily_score
   end
 
 

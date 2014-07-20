@@ -27,6 +27,16 @@ class VippredictorCrawler
     return get_page(url)
   end
 
+  def get_score_html_page()
+    id = CONFIG["vippredictor_group_id"]
+    first_game_id = CONFIG["vippredictor_first_game_id"]
+
+
+    uri = "/en-US/Prediction/Match/#{id}?matchId=#{first_game_id}"
+    url = CONFIG["vippredictor_url"] + uri
+
+    return get_page(url)
+  end
 
   def get_page(url)
     agent = Mechanize.new

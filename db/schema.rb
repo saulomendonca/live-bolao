@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716125120) do
+ActiveRecord::Schema.define(version: 20140716135958) do
+
+  create_table "game_scores", force: true do |t|
+    t.integer  "points"
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_scores", ["game_id"], name: "index_game_scores_on_game_id"
+  add_index "game_scores", ["user_id"], name: "index_game_scores_on_user_id"
 
   create_table "games", force: true do |t|
     t.integer  "webservice_id"
@@ -50,6 +61,16 @@ ActiveRecord::Schema.define(version: 20140716125120) do
   end
 
   add_index "results", ["game_id"], name: "index_results_on_game_id"
+
+  create_table "scores", force: true do |t|
+    t.integer  "points"
+    t.integer  "position"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id"
 
   create_table "teams", force: true do |t|
     t.string   "code_fifa"

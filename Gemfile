@@ -32,6 +32,7 @@ gem 'spring',        group: :development
 gem 'mechanize'
 gem 'hpricot'
 gem 'whenever', :require => false
+gem 'annotate', ">=2.6.0"
 
 
 group :development, :test do
