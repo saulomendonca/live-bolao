@@ -7,20 +7,22 @@ RSpec.describe "games/index", :type => :view do
       Game.create!(
         :webservice_id => 1,
         :vippredictor_id => 2,
-        :status => "Status",
+        :status => "in progress",
         :complete => false,
+        :date => Date.today,
         :weight => 3,
-        :away_team => nil,
-        :home_team => nil
+        :away_team => Team.first,
+        :home_team => Team.last
       ),
       Game.create!(
         :webservice_id => 1,
         :vippredictor_id => 2,
-        :status => "Status",
+        :status => "in progress",
         :complete => false,
+        :date => Date.today,
         :weight => 3,
-        :away_team => nil,
-        :home_team => nil
+        :away_team => Team.first,
+        :home_team => Team.last
       )
     ])
   end
@@ -29,7 +31,7 @@ RSpec.describe "games/index", :type => :view do
     render
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => "Status".to_s, :count => 2
+    assert_select "tr>td", :text => "in progress".to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2
     assert_select "tr>td", :text => 3.to_s, :count => 2
   end

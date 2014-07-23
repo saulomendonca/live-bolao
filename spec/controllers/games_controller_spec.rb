@@ -24,11 +24,11 @@ RSpec.describe GamesController, :type => :controller do
   # Game. As you add validations to Game, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:game, home_team_id: Team.first.id, away_team_id: Team.last.id)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:game, status: "breaking")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +103,14 @@ RSpec.describe GamesController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:game, home_team_id: Team.first.id, away_team_id: Team.last.id, status: "completed")
       }
 
       it "updates the requested game" do
         game = Game.create! valid_attributes
         put :update, {:id => game.to_param, :game => new_attributes}, valid_session
         game.reload
-        skip("Add assertions for updated state")
+        expect(assigns(:game).status).to eq("completed")
       end
 
       it "assigns the requested game as @game" do

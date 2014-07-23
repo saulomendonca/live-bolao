@@ -4,13 +4,13 @@ RSpec.describe GameScoreCalculator, :type => :service do
 
   before do
     @user = User.first
-    @game = create(:game, status: "in progress", weight: 10)
+    @game = create(:game, status: "in progress", weight: 10, away_team: Team.first, home_team: Team.last)
     @calculator = GameScoreCalculator.new(@user, @game)
 
   end
 
   it "should return 0 if game doesn't have prediction" do
-    game = create(:game, status: "in progress")
+    game = create(:game, status: "in progress", away_team: Team.first, home_team: Team.last)
     result = create(:result, game: game, home_team_goal: 0, away_team_goal: 0)
     points = GameScoreCalculator.new(User.first, game).calculate_game_points
     expect(points).to eq 0
@@ -18,7 +18,7 @@ RSpec.describe GameScoreCalculator, :type => :service do
 
   it "should return 0 if game doesn't have result" do
     user = User.first
-    game = create(:game, status: "in progress")
+    game = create(:game, status: "in progress", away_team: Team.first, home_team: Team.last)
     prediction = create(:prediction, game: game, user: user)
 
     points = GameScoreCalculator.new(user, game).calculate_game_points
@@ -26,14 +26,14 @@ RSpec.describe GameScoreCalculator, :type => :service do
   end
 
   it "should return 0 if game has status 'future' " do
-    game = create(:game, status: "future")
+    game = create(:game, status: "future", away_team: Team.first, home_team: Team.last)
 
     points = GameScoreCalculator.new(User.first, game).calculate_game_points
     expect(points).to eq 0
   end
 
   it "should return 200 when getting only the losing team with a weight 20" do
-    game = create(:game, status: "in progress", weight: 20)
+    game = create(:game, status: "in progress", weight: 20, away_team: Team.first, home_team: Team.last)
 
     user = User.first
     result = create(:result, game: game, home_team_goal: 3, away_team_goal: 1)

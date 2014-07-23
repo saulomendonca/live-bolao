@@ -25,8 +25,8 @@ class ScoreParser
   def parse_line(line_html)
     id = line_html.css("div.float_l")[5].css("a")[0]["href"].gsub(/.*uId=/, "")
     user = User.find_by_vippredictor_id(id)
-    position = line_html.css("span.float_l")[0].text
-    points = line_html.css("div.float_l")[4].text
+    position = line_html.css("span.float_l")[0].text.to_i
+    points = line_html.css("div.float_l")[4].text.to_i
 
     return {:user_id => user.id, :points => points, :position => position}
   end

@@ -5,11 +5,12 @@ RSpec.describe "games/edit", :type => :view do
     @game = assign(:game, Game.create!(
       :webservice_id => 1,
       :vippredictor_id => 1,
-      :status => "MyString",
+      :status => "completed",
       :complete => false,
+      :date => Date.today,
       :weight => 1,
-      :away_team => nil,
-      :home_team => nil
+      :away_team => Team.first,
+      :home_team => Team.last
     ))
   end
 

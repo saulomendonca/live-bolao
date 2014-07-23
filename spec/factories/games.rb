@@ -30,7 +30,7 @@ FactoryGirl.define do
     complete false
     weight 10
     date "2014-07-08"
-    association :away_team, factory: :team, code_fifa: "BRA", name: "Brazil"
-    association :home_team, factory: :team, code_fifa: "CRO", name: "Croatia"
+    association :away_team, factory: :team, code_fifa: "BRAA", name: "BrazilA", code_vippredictor: "BRAA"
+    association :home_team, factory: :team, code_fifa: "CROA", name: "CroatiaA", code_vippredictor: "CROA"
   end
 end

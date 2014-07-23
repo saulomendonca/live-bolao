@@ -19,5 +19,46 @@
 require 'rails_helper'
 
 RSpec.describe Prediction, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @game = create(:game)
+    @user = User.first
+  end
+
+  it "Should be valid when all attributes is valid" do
+    prediction = build(:prediction, game: @game, user: @user)
+    expect(prediction).to be_valid
+  end
+
+  it "Should be not valid when home_team_goal is less than 0" do
+    prediction = build(:prediction, home_team_goal: -1, game: @game, user: @user)
+    expect(prediction).not_to be_valid
+  end
+
+  it "Should be not valid when away_team_goal is less than 0" do
+    prediction = build(:prediction, away_team_goal: -1, game: @game, user: @user)
+    expect(prediction).not_to be_valid
+  end
+
+  it "Should be not valid when doesn't have game" do
+    prediction = build(:prediction, game: nil)
+    expect(prediction).not_to be_valid
+  end
+
+  it "Should be draw when home_team_goal is equal to away_team_goal" do
+    prediction = build(:prediction, home_team_goal: 1, away_team_goal: 1, game: @game, user: @user)
+    expect(prediction).to be_draw
+
+    prediction = build(:prediction, home_team_goal: 2, away_team_goal: 1, game: @game, user: @user)
+    expect(prediction).not_to be_draw
+  end
+
+  it "Should home_team_winner is true when home_team_goal is greater than to away_team_goal" do
+    prediction = build(:prediction, home_team_goal: 2, away_team_goal: 1, game: @game, user: @user)
+    expect(prediction).to be_home_team_winner
+
+    prediction = build(:prediction, home_team_goal: 1, away_team_goal: 1, game: @game, user: @user)
+    expect(prediction).not_to be_home_team_winner
+    prediction = build(:prediction, home_team_goal: 1, away_team_goal: 2, game: @game, user: @user)
+    expect(prediction).not_to be_home_team_winner
+  end
 end

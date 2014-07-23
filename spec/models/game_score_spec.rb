@@ -18,5 +18,28 @@
 require 'rails_helper'
 
 RSpec.describe GameScore, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @game = create(:game)
+    @user = User.first
+  end
+
+  it "Should be valid when all attributes is valid" do
+    game_score = build(:game_score, game: @game, user: @user)
+    expect(game_score).to be_valid
+  end
+
+  it "Should be not valid when away_team_goal is less than 0" do
+    game_score = build(:game_score, points: -1, game: @game, user: @user)
+    expect(game_score).not_to be_valid
+  end
+
+  it "Should be not valid when doesn't have game" do
+    game_score = build(:game_score, points: 0, game: nil, user: @user)
+    expect(game_score).not_to be_valid
+  end
+
+  it "Should be not valid when doesn't have user" do
+    game_score = build(:game_score, points: 0, game: @game, user: nil)
+    expect(game_score).not_to be_valid
+  end
 end

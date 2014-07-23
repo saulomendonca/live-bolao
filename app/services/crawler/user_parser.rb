@@ -16,7 +16,7 @@ class UserParser
 
     return linhas.map do |linha|
       name =  linha.css("td.tbl_bolao_td").text.gsub("/n", "").strip
-      id = linha.css("div.float_l")[5].css("a")[0]["href"].gsub(/.*uId=/, "")
+      id = linha.css("div.float_l")[5].css("a")[0]["href"].gsub(/.*uId=/, "").to_i
       img = linha.css("div.float_l/td/a/img")[0]["src"]
       {name: name, vippredictor_id: id, image: img}
     end

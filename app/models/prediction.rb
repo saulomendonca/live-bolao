@@ -20,8 +20,13 @@ class Prediction < ActiveRecord::Base
   belongs_to :game
   belongs_to :user
 
+  validates :home_team_goal, numericality: { only_integer: true, greater_than: -1 }
+  validates :away_team_goal, numericality: { only_integer: true, greater_than: -1 }
+  validates :game, presence: true
+  validates :user, presence: true
 
-  def is_draw?
+
+  def draw?
     self.home_team_goal ==  self.away_team_goal
   end
 

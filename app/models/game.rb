@@ -27,9 +27,29 @@ class Game < ActiveRecord::Base
   has_many :predictions
   has_many :game_scores
 
+  validates :webservice_id, presence: true
+  validates :status, inclusion: { in: ["future", "in progress", "completed"]}
+  validates :date, presence: true
+  validates :home_team, presence: true
+  validates :away_team, presence: true
+  validates :weight, numericality: { only_integer: true, greater_than: -1 }
+
+  validate :validates_teams
+
+
 
   STATUS_FUTURE = "future"
   STATUS_COMPLETED = "completed"
   STATUS_IN_PROGRESS = "in progress"
+
+
+
+  private
+
+  def validates_teams
+    if self.home_team && self.away_team && self.home_team.id == self.away_team.id
+      self.errors.add(:away_team, "Away team should be diferent of Home team")
+    end
+  end
 
 end

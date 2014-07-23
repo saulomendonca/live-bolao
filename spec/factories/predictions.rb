@@ -20,9 +20,9 @@
 
 FactoryGirl.define do
   factory :prediction do
-    home_team_goal 1
-    away_team_goal 1
-    game nil
+    home_team_goal 0
+    away_team_goal 0
+    association :game, factory: :game, status: "in progress"
     user nil
   end
 end

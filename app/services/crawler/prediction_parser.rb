@@ -48,8 +48,8 @@ class PredictionParser
 
 
     return {
-      :home_team_goal => home_team_goal,
-      :away_team_goal => away_team_goal,
+      :home_team_goal => home_team_goal.to_i,
+      :away_team_goal => away_team_goal.to_i,
       :user_id => user.id,
       :game_id => game_id
     }

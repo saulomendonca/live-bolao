@@ -17,7 +17,11 @@
 class Result < ActiveRecord::Base
   belongs_to :game
 
-  def is_draw?
+  validates :home_team_goal, numericality: { only_integer: true, greater_than: -1 }
+  validates :away_team_goal, numericality: { only_integer: true, greater_than: -1 }
+  validates :game, presence: true
+
+  def draw?
     self.home_team_goal ==  self.away_team_goal
   end
 

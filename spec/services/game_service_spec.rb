@@ -89,7 +89,7 @@ RSpec.describe GameService, :type => :service do
 
   it "should clean games before create the daily games" do
     3.times do
-      create(:game)
+      create(:game, away_team: Team.first, home_team: Team.last)
     end
     expect(Game.count).to eq 3
     @service.populate_daily_games

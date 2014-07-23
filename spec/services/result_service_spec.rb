@@ -65,7 +65,7 @@ RSpec.describe ResultService, :type => :service do
   end
 
   it "should not create a new result when the game has one result" do
-    game = create(:game, webservice_id: 21, status: "in progress")
+    game = create(:game, webservice_id: 21, status: "in progress", away_team: Team.first, home_team: Team.last)
     create(:result, home_team_goal: 0, away_team_goal: 0, game: game)
     @games[0]["match_number"] = "21";
 
@@ -86,7 +86,7 @@ RSpec.describe ResultService, :type => :service do
   end
 
   it "should calculate daily score when Game change status from future to in progress" do
-    create(:game, webservice_id: 21, status: "future")
+    create(:game, webservice_id: 21, status: "future", away_team: Team.first, home_team: Team.last)
     @games[0]["status"] = "in progress";
     @games[0]["match_number"] = "21";
 
@@ -96,7 +96,7 @@ RSpec.describe ResultService, :type => :service do
   end
 
   it "should calculate daily score when Game change status from future to completed" do
-    create(:game, webservice_id: 21, status: "future")
+    create(:game, webservice_id: 21, status: "future", away_team: Team.first, home_team: Team.last)
     @games[0]["status"] = "completed";
     @games[0]["match_number"] = "21";
 
@@ -107,7 +107,7 @@ RSpec.describe ResultService, :type => :service do
 
 
   it "should calculate daily score when Game change status from in progress to completed" do
-    create(:game, webservice_id: 21, status: "in progress")
+    create(:game, webservice_id: 21, status: "in progress", away_team: Team.first, home_team: Team.last)
     @games[0]["status"] = "completed";
     @games[0]["match_number"] = "21";
 
@@ -116,7 +116,7 @@ RSpec.describe ResultService, :type => :service do
   end
 
   it "should change status in db when status change in webservice" do
-    game = create(:game, webservice_id: 21, status: "in progress")
+    game = create(:game, webservice_id: 21, status: "in progress", away_team: Team.first, home_team: Team.last)
     @games[0]["status"] = "completed";
     @games[0]["match_number"] = "21";
 
@@ -127,7 +127,7 @@ RSpec.describe ResultService, :type => :service do
 
 
   it "should update result when Result change in webservice" do
-    game = create(:game, webservice_id: 20, status: "in progress")
+    game = create(:game, webservice_id: 20, status: "in progress", away_team: Team.first, home_team: Team.last)
     result = create(:result, home_team_goal: 0, away_team_goal: 0, game: game)
     @games[0]["match_number"] = "20";
     @games[0]["home_team"]["goals"] = "3";
@@ -145,7 +145,7 @@ RSpec.describe ResultService, :type => :service do
 
 
   it "should calculate daily score when Result change" do
-    game = create(:game, webservice_id: 20, status: "in progress")
+    game = create(:game, webservice_id: 20, status: "in progress", away_team: Team.first, home_team: Team.last)
     result = create(:result, home_team_goal: 0, away_team_goal: 0, game: game)
     @games[0]["match_number"] = "20";
     @games[0]["home_team"]["goals"] = "3";

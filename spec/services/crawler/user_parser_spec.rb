@@ -100,7 +100,7 @@ RSpec.describe UserParser, :type => :service do
   it "should extract the vip_predictor_id" do
     hash = @parser.get_users_hash
 
-    expect(hash[0][:vippredictor_id]).to be_eql "348210"
+    expect(hash[0][:vippredictor_id]).to be_eql 348210
   end
 
 

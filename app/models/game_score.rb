@@ -18,4 +18,8 @@
 class GameScore < ActiveRecord::Base
   belongs_to :game
   belongs_to :user
+
+  validates :points, numericality: { only_integer: true, greater_than: -1 }
+  validates :game, presence: true
+  validates :user, presence: true
 end

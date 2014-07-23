@@ -5,11 +5,12 @@ RSpec.describe "games/show", :type => :view do
     @game = assign(:game, Game.create!(
       :webservice_id => 1,
       :vippredictor_id => 2,
-      :status => "Status",
+      :status => "in progress",
       :complete => false,
+      :date => Date.today,
       :weight => 3,
-      :away_team => nil,
-      :home_team => nil
+      :away_team => Team.first,
+      :home_team => Team.last
     ))
   end
 
@@ -17,7 +18,7 @@ RSpec.describe "games/show", :type => :view do
     render
     expect(rendered).to match(/1/)
     expect(rendered).to match(/2/)
-    expect(rendered).to match(/Status/)
+    expect(rendered).to match(/in progress/)
     expect(rendered).to match(/false/)
     expect(rendered).to match(/3/)
     expect(rendered).to match(//)

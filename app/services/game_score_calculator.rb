@@ -11,14 +11,14 @@ class GameScoreCalculator
 
     return 0 if !@result || !@prediction
 
-    if @result.is_draw?
+    if @result.draw?
       return calculate_points_of_draw
     end
     return calculate_points_of_game_with_winner
   end
 
   def calculate_points_of_draw
-    if @prediction.is_draw?
+    if @prediction.draw?
 
       return 25 *  @game.weight if @result.away_team_goal == @prediction.away_team_goal
       return 15 *  @game.weight
@@ -27,7 +27,7 @@ class GameScoreCalculator
     return 0
   end
   def calculate_points_of_game_with_winner
-    return 4 *  @game.weight if @prediction.is_draw?
+    return 4 *  @game.weight if @prediction.draw?
     return 0 if @result.home_team_winner? !=  @prediction.home_team_winner?
 
     result_diference = @result.home_team_goal - @result.away_team_goal

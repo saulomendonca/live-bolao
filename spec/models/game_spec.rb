@@ -23,5 +23,58 @@
 require 'rails_helper'
 
 RSpec.describe Game, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+  end
+
+  it "Should be valid when all attributes is valid" do
+    game = build(:game)
+    expect(game).to be_valid
+  end
+
+  it "Should be not valid when doesn't have home team" do
+    game = build(:game, home_team: nil)
+    expect(game).not_to be_valid
+  end
+
+  it "Should be not valid when doesn't have away team" do
+    game = build(:game, away_team: nil)
+    expect(game).not_to be_valid
+  end
+
+  it "Should be not valid when weight is negative" do
+    game = build(:game, weight: -10)
+    expect(game).not_to be_valid
+  end
+
+  it "Should be not valid when status is 'future'" do
+    game = build(:game, status: "future")
+    expect(game).to be_valid
+  end
+
+  it "Should be not valid when status is 'in progress'" do
+    game = build(:game, status: "in progress")
+    expect(game).to be_valid
+  end
+
+  it "Should be not valid when status is 'completed'" do
+    game = build(:game, status: "completed")
+    expect(game).to be_valid
+  end
+
+  it "Should be not valid when status is diferent of ('future', 'in progress', 'completed')" do
+    game = build(:game, status: "breaking")
+    expect(game).not_to be_valid
+  end
+
+  it "Should be not valid when home team is the same team of away team" do
+    game = build(:game, home_team: Team.first, away_team: Team.first)
+    expect(game).not_to be_valid
+  end
+
+
+
+
+
+
+
 end
