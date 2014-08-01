@@ -33,12 +33,16 @@ gem 'mechanize'
 gem 'hpricot'
 gem 'whenever', :require => false
 gem 'annotate', ">=2.6.0"
+gem "active_decorator"
+
+gem "seedbank"
 
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails', "~> 4.0"
-  gem "seedbank"
+  gem 'capybara'
+  gem 'simplecov'
 end
 
 

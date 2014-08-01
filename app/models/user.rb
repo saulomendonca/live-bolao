@@ -11,6 +11,11 @@
 #
 
 class User < ActiveRecord::Base
+  has_one :score
+  has_many :game_scores
+
+
+
   validates :name, presence: true
   validates :vippredictor_id, uniqueness: true
 end

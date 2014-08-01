@@ -19,7 +19,7 @@
 
 FactoryGirl.define do
   factory :game_score do
-    points 1
+    points 100
     game nil
     user nil
   end

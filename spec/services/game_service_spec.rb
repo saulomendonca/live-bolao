@@ -2,8 +2,14 @@ require 'rails_helper'
 
 RSpec.describe GameService, :type => :service do
 
-  before do
+  before :each do
     # webservice = FifaWebservice.new
+    Team.destroy_all
+    User.destroy_all
+    create(:team, code_fifa: "BRA", code_vippredictor: "BRA", name: "Brazil")
+    create(:team, code_fifa: "CRO", code_vippredictor: "CRO", name: "Croatia")
+
+    create(:user)
 
     @games = [
       {
@@ -88,11 +94,15 @@ RSpec.describe GameService, :type => :service do
   end
 
   it "should clean games before create the daily games" do
-    3.times do
+    game = create(:game, away_team: Team.first, home_team: Team.last)
+    create(:prediction, game: game, user:User.first)
+
+    2.times do
       create(:game, away_team: Team.first, home_team: Team.last)
     end
     expect(Game.count).to eq 3
     @service.populate_daily_games
     expect(Game.count).to eq 1
+    expect(Prediction.count).to eq 0
   end
 end

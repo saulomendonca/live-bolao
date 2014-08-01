@@ -13,6 +13,8 @@ class TeamParser
 
   def parse_teams_html(html)
 
+    @teams_fifa = @fifa_web_service.get_hash_teams
+
     doc = Nokogiri::HTML(html)
     lines =  doc.css('//table.tbl_palpite//tr')
     teams = []
@@ -30,29 +32,14 @@ class TeamParser
     if line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]
 
       code_vip = line_html.css("td.tbl_palpite-timeA")[0].css("a").text
-      # puts "*" * 100
-      # puts code_vip
       img = line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]["src"]
 
       team_code = TeamCodeTranslate.get_fifa_code(code_vip)
 
-      # team = teams_fifa.find{ |t| t[:code] == team_code}
-      return {:code_fifa => team_code, :code_vippredictor => code_vip, :name => "teste", :image => img}
-      # return {:code_fifa => team_code, :code_vippredictor => code_vip, :name => team[:name], :image => img}
+      team = @teams_fifa.find{ |t| t[:code] == team_code}
+
+      return {:code_fifa => team_code, :code_vippredictor => code_vip, :name => team[:name], :image => img}
     end
-    # if line_html.css("td.tbl_palpite-escudo")[1].css("img")[0]
-
-    #   code_vip = line_html.css("td.tbl_palpite-timeA")[0].css("a").text
-    #   img = line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]["src"]
-
-    #   team_code = TeamCodeTranslate.get_fifa_code(code_vip)
-
-    #   team = teams_fifa.find{ |t| t[:code] == team_code}
-    #   {:code_fifa => team_code, :code_vippredictor => code_vip, :name => team[:name], :image => img}
-
-    #   teams << parse_line
-    # end
   end
-
 
 end

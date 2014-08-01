@@ -1,0 +1,29 @@
+<li class="rk-item" style="padding-top: 18px; padding-bottom: 0px; list-style: none outside none;">
+    <div class="float_l rk_posicao">
+        <%= ranking_item.current_position %>
+    </div>
+    <div class="float_l rk_participante">
+        <div class="float_l rk_imagem">
+            <a href="http://www.vippredictor.com/pt-BR/User/Index/<%= ranking_item.vippredictor_id %>/sti-na-copa-2014">
+                <img src="<%= ranking_item.image %>" width="55" height="55" />
+            </a>
+        </div>
+        <div class="rk_titulo" style="padding-top: 20px;">
+            <a href="http://www.vippredictor.com/pt-BR/User/Index/<%= ranking_item.vippredictor_id %>/sti-na-copa-2014" class="bl_titulo_bolao"><%= ranking_item.name %></a>
+        </div>
+    </div>
+
+    <div class="float_l rk_header" style="width: 185px; ">&nbsp;</div>
+    <div class="float_l rk_header" style="width: 85px; text-align: center;"><%= ranking_item.last_points %></div>
+    <div class="float_l rk_header" style="width: 85px; text-align: center;"><%= ranking_item.daily_points %></div>
+    <div class="float_l rk_header" style="width: 85px; text-align: center;"><%= ranking_item.current_points %></div>
+    <div class="float_l rk_header var_position" style="width: 85px; text-align: center;">
+          <span style="vertical-align: top;"><%= ranking_item.position_difference %></span>
+          <%= ranking_item.position_difference_image %>
+    </div>
+
+    <%= ranking_item.predictons(@live_games) %>
+
+    <div class="limpa"></div>
+
+</li>

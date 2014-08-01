@@ -1,0 +1,65 @@
+<div id="container" class="alinha limpa">
+  <div class="limpa box">
+    <div class="geral_padd">
+
+        <h3 class="tit_h3 tit_bg">
+        <div class="menu_geral-hover">
+            <div style="width: 915px;" class="float_l rk_participante">
+
+              <div style="padding: 3px 0px; text-align: center;">
+
+                <%= render 'live_results' %>
+
+              </div>
+              <div class="limpa"></div>
+            </div>
+        </div>
+        <div class="limpa"></div>
+        </h3>
+
+
+        <h3 class="tit_h3 tit_bgVerde tit_bg">
+          <div class="menu_geral-hover">
+              <div class="float_l rk_participante" style="width: 915px;">
+                <div class="float_l" style="padding: 3px 0;">
+                    <b>Ranking</b><span>&nbsp;</span>
+                </div>
+                <div class="limpa"></div>
+              </div>
+          </div>
+          <div class="limpa"></div>
+        </h3>
+
+    </div>
+
+    <br />
+
+    <li class="bolao_header" style="list-style: none outside none;">
+        <span class="float_l rk_posicao">#</span>
+        <span class="float_l rk_participante">Participante</span>
+        <span style="width: 185px;" class="float_l rk_header">&nbsp;</span>
+        <span class="float_l rk_header" title="Pontuação Anterior" style="width: 85px; text-align: center;">Pontos</span>
+        <span class="float_l rk_header" title="Pontos Ganhos Hoje" style="width: 85px; text-align: center;">Hoje</span>
+        <span class="float_l rk_header" title="Total" style="width: 85px; text-align: center;">Total</span>
+        <span class="float_l rk_header var_position_header" title="Variação" style="width: 85px; text-align: center;">Variação</span>
+        <span class="float_l rk_palpite" title="Palpite" style="width: 85px; text-align: center;">Palpites</span>
+        <span class="float_l rk_pa" title="" style="width: 85px;"></span>
+        <span class="limpa"></span>
+    </li>
+
+    <% @ranking_items.each  do |ranking_item| %>
+        <%= render 'line', ranking_item: ranking_item %>
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

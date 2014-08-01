@@ -13,7 +13,7 @@ class VippredictorCrawler
 
   def get_teams_html_page
     id = CONFIG["vippredictor_group_id"]
-    uri = "/en-US/Prediction/My/#{id}?FlgPeriod=0"
+    uri = "/en-US/Prediction/My/#{id}?FlgPeriod=5"
     url = CONFIG["vippredictor_url"] + uri
 
     return get_page(url)

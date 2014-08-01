@@ -24,3 +24,7 @@
 every :day, :at => '5:30am' do
   runner "GameService.new().populate_daily_games"
 end
+
+every :day, :at => '5:10am' do
+  # runner "ScoreService.new().populate_score"
+end

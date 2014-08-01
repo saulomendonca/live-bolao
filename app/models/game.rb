@@ -24,7 +24,7 @@ class Game < ActiveRecord::Base
   belongs_to :home_team, class_name:Team, foreign_key: "home_team_id"
   belongs_to :away_team, class_name:Team, foreign_key: "away_team_id"
   has_one :result
-  has_many :predictions
+  has_many :predictions, dependent: :destroy
   has_many :game_scores
 
   validates :webservice_id, presence: true
@@ -42,6 +42,32 @@ class Game < ActiveRecord::Base
   STATUS_COMPLETED = "completed"
   STATUS_IN_PROGRESS = "in progress"
 
+  def home_team_name
+    home_team.name if home_team
+  end
+
+  def home_team_image
+    home_team.image if home_team
+  end
+
+  def away_team_name
+    away_team.name if away_team
+  end
+
+  def away_team_image
+    away_team.image if away_team
+  end
+
+
+  def home_team_goal
+    return 0 if result.nil?
+    result.home_team_goal
+  end
+
+  def away_team_goal
+    return 0 if result.nil?
+    result.away_team_goal
+  end
 
 
   private

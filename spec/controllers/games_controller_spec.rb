@@ -20,6 +20,29 @@ require 'rails_helper'
 
 RSpec.describe GamesController, :type => :controller do
 
+  before :all do
+    Team.destroy_all
+    create(:team)
+    create(:team, code_fifa: "COS", code_vippredictor: "COS", name: "Costa Rica")
+
+    # @user = create(:user, name: "Juarez", vippredictor_id: 34562)
+
+    # create(:score, user: @user, points: 3500)
+    # Result.destroy_all
+    # GameScore.destroy_all
+    # Game.destroy_all
+    # @game = create(:game, status: "in progress", weight: 10, away_team: @home_team, home_team: away_team)
+    # create(:result, game: @game, away_team_goal: 1, home_team_goal: 2)
+
+    # User.all.each do |user|
+    #   create(:prediction, user: user, game: @game, away_team_goal: 0, home_team_goal: 0)
+    # end
+    # Prediction.where(user_id: @user.id).first.update_attributes(away_team_goal: 5, home_team_goal: 9)
+
+    # GameScoreService.new().calculate_daily_score
+
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Game. As you add validations to Game, be sure to
   # adjust the attributes here as well.
@@ -38,6 +61,7 @@ RSpec.describe GamesController, :type => :controller do
 
   describe "GET index" do
     it "assigns all games as @games" do
+      Game.destroy_all
       game = Game.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:games)).to eq([game])

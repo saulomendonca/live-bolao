@@ -1,0 +1,13 @@
+<% unless @live_games.empty? %>
+  Jogos Ao Vivo
+  <br/>
+  <br/>
+
+  <% @live_games.each do |game| %>
+    <%= game.home_team_name %>
+    <%=image_tag(game.home_team_image)%>
+    <%= game.home_team_goal %> X <%= game.away_team_goal %>
+    <%=image_tag(game.away_team_image)%>
+    <%= game.away_team_name %>
+  <% end %>
+<% end %>

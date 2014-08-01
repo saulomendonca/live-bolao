@@ -5,6 +5,7 @@ class ResultService
   end
 
   def verify_daily_results
+
     changes = false
     games_array = @fifa_webservice.get_daily_games
     games_array.each do |game_hash|

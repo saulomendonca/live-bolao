@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe GameScoreService, :type => :service do
 
-  before do
+  before :each do
+    User.destroy_all
+    create(:user)
+    create(:user, vippredictor_id: 234, name: "Test")
     @game = create(:game, status: "completed", away_team: Team.first, home_team: Team.last)
     game2 = create(:game, webservice_id: 2, status: "in progress", away_team: Team.first, home_team: Team.last)
     User.all.each do |user|
@@ -18,28 +21,28 @@ RSpec.describe GameScoreService, :type => :service do
     end
     expect(GameScore.count).to eq 3
     @service.calculate_daily_score
-    expect(GameScore.count).to eq 90
+    expect(GameScore.count).to eq 4
   end
 
 
   it "should create one game score for each game and each user" do
     expect(GameScore.count).to eq 0
     @service.calculate_daily_score
-    expect(GameScore.count).to eq 90
+    expect(GameScore.count).to eq 4
   end
 
   it "should not create game score for future games" do
     @game.update_attributes!(status: "future")
     expect(GameScore.count).to eq 0
     @service.calculate_daily_score
-    expect(GameScore.count).to eq 45
+    expect(GameScore.count).to eq 2
   end
 
   it "should not create game score for games without predictions" do
     game = create(:game, status: "in progress")
     expect(GameScore.count).to eq 0
     @service.calculate_daily_score
-    expect(GameScore.count).to eq 90
+    expect(GameScore.count).to eq 4
   end
 
 

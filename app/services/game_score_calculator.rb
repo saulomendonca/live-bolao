@@ -26,6 +26,7 @@ class GameScoreCalculator
 
     return 0
   end
+
   def calculate_points_of_game_with_winner
     return 4 *  @game.weight if @prediction.draw?
     return 0 if @result.home_team_winner? !=  @prediction.home_team_winner?

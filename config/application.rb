@@ -10,6 +10,7 @@ module LiveVippredictor
   class Application < Rails::Application
 
     config.autoload_paths << config.root.join("app/services/crawler").to_s
+    config.autoload_paths << config.root.join("app/services/objects").to_s
 
 
     # Settings in config/environments/* take precedence over those specified here.
