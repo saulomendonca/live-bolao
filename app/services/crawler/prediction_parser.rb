@@ -17,8 +17,9 @@ class PredictionParser
 
     teams =  doc.css('//div.list_partida/ul.list_palpite_partida/li.palpite_item/div.palpite_box_partida//a')
     firstTeam = teams[0].text
+    home_team = @game.home_team
 
-    home_team_first = (@game.home_team.code_vippredictor == firstTeam)
+    home_team_first = (home_team.code_vippredictor == firstTeam)
 
     predictions = []
 

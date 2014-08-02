@@ -8,7 +8,7 @@
 
               <div style="padding: 3px 0px; text-align: center;">
 
-                <%= render 'live_results' %>
+                <%= render 'live_results', live_games: @live_games %>
 
               </div>
               <div class="limpa"></div>
@@ -48,7 +48,7 @@
     </li>
 
     <% @ranking_items.each  do |ranking_item| %>
-        <%= render 'line', ranking_item: ranking_item %>
+        <%= render 'line', ranking_item: ranking_item, live_games: @live_games %>
     <% end %>
 
     </div>

@@ -27,11 +27,10 @@ private
 
 
       current_points = 0
-      if user.score
-        item.last_position = user.score.position
-        item.last_points = user.score.points
-        current_points += user.score.points
-      end
+
+      item.last_position = user.last_position
+      item.last_points = user.last_points
+      current_points += user.last_points
 
       item.games_hash = []
       user.game_scores.each do |game_score|

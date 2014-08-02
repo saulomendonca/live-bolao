@@ -18,4 +18,14 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :vippredictor_id, uniqueness: true
+
+  def last_position
+    return score.position if score
+    0
+  end
+
+  def last_points
+    return score.points if score
+    0
+  end
 end
