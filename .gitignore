@@ -11,8 +11,11 @@
 
 #config
 config/config.yml
-#logs 
+#logs
 log/*
+
+#database
+db/*
 
 ## Documentation cache and generated files:
 /.yardoc/
