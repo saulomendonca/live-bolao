@@ -11,7 +11,7 @@ RSpec.describe PredictionParser, :type => :service do
     # file = File.open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/predictions", "w")
     # file.puts doc.force_encoding('ISO-8859-1')
 
-    @html = open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/predictions.html")
+    @html = open("./spec/helpers/predictions.html")
 
     crawler = double("VippredictorCrawler")
     allow(crawler).to receive(:get_user_game_results_html_page).with(@game_id).and_return(@html)

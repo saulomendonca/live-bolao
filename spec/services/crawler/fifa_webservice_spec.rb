@@ -4,6 +4,9 @@ RSpec.describe FifaWebservice, :type => :service do
 
   before do
     @webservice = FifaWebservice.new()
+    json = File.read("./spec/helpers/teams.json")
+    allow(@webservice).to receive(:get_json).with('/teams').and_return(json.to_s)
+
   end
 
   # Team
@@ -20,7 +23,7 @@ RSpec.describe FifaWebservice, :type => :service do
 
   it "should get all teams" do
     hash = @webservice.get_hash_teams
-    expect(hash.size).to be_eql 32
+    expect(hash.size).to be_eql 24
   end
 
   it "should generate a hash of teams with code and name" do
@@ -34,7 +37,7 @@ RSpec.describe FifaWebservice, :type => :service do
   # Games
 
   it "get_daily_games should search in URL '/matches/today' " do
-    expect(@webservice).to receive(:get_json).with("/matches/today")
+    expect(@webservice).to receive(:get_json).with("/matches/today").and_return([].to_json)
     hash = @webservice.get_daily_games
   end
 
@@ -62,7 +65,7 @@ RSpec.describe FifaWebservice, :type => :service do
     ]
 
     webservice = FifaWebservice.new()
-    allow(webservice).to receive(:get_json).and_return(games)
+    allow(webservice).to receive(:get_json).with("/matches/today").and_return(games.to_json)
 
     hash = webservice.get_daily_games
     expect(hash).to be_a_kind_of(Array)

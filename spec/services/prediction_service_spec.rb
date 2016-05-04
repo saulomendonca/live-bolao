@@ -5,7 +5,7 @@ RSpec.describe PredictionService, :type => :service do
   before do
     @game_id = 10308
     @game = create(:game, vippredictor_id: @game_id)
-    @html = open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/predictions.html")
+    @html = open("./spec/helpers/predictions.html")
 
     crawler = double("VippredictorCrawler")
     allow(crawler).to receive(:get_user_game_results_html_page).with(@game_id).and_return(@html)

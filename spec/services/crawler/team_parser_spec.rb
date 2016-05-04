@@ -1,20 +1,18 @@
 require 'rails_helper'
+require './spec/helpers/fifa_web_service_stub'
 
 RSpec.describe TeamParser, :type => :service do
 
   before do
     crawler = VippredictorCrawler.new
-    # doc = crawler.get_teams_html_page
-    # file = File.open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/team.html", "w")
-    # file.puts doc.force_encoding('ISO-8859-1')
 
-    @html = open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/teams.html")
+    @html = open("./spec/helpers/teams.html")
 
     crawler = double("VippredictorCrawler")
     allow(crawler).to receive(:get_teams_html_page).and_return(@html)
 
 
-    webservice = FifaWebservice.new
+    webservice = FifaWebserviceStub.new
 
     @parser = TeamParser.new(crawler, webservice)
   end
@@ -39,26 +37,5 @@ RSpec.describe TeamParser, :type => :service do
     hash = @parser.get_teams_hash
     expect(hash.size).to be_eql 32
   end
-
-  # it "should extract the name" do
-  #   hash = @parser.get_users_hash
-
-  #   expect(hash[0][:name]).to be_eql "Germany"
-  # end
-
-  # it "should extract the fifa code" do
-  #   hash = @parser.get_teams_hash
-
-  #   expect(hash[0][:fifa_code]).to be_eql "GMY"
-  # end
-
-  # it "should extract the vippredictor code" do
-  #   hash = @parser.get_teams_hash
-
-  #   expect(hash[0][:vippredictor_code]).to be_eql "GMY"
-  # end
-
-
-
 
 end

@@ -8,7 +8,7 @@ RSpec.describe ScoreParser, :type => :service do
     # file = File.open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/score.html", "w")
     # file.puts doc.force_encoding('ISO-8859-1')
 
-    @html = open("/Users/saulomendonca/Documents/desenvolvimento/projetos/live-vippredictor/spec/helpers/score.html")
+    @html = open("./spec/helpers/score.html")
 
     crawler = double("VippredictorCrawler")
     allow(crawler).to receive(:get_score_html_page).and_return(@html)

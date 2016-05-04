@@ -35,8 +35,8 @@ class TeamParser
       img = line_html.css("td.tbl_palpite-escudo")[0].css("img")[0]["src"]
 
       team_code = TeamCodeTranslate.get_fifa_code(code_vip)
-
       team = @teams_fifa.find{ |t| t[:code] == team_code}
+      puts team_code unless team
 
       return {:code_fifa => team_code, :code_vippredictor => code_vip, :name => team[:name], :image => img}
     end
