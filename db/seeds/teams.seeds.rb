@@ -5,3 +5,4 @@ teams_hash = parser.get_teams_hash
 teams_hash.each do |team_hash|
   Team.create!(team_hash)
 end
+Team.create({code_fifa:"BRA", code_vippredictor:"BRA", name:"Brasil"})

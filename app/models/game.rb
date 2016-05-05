@@ -73,8 +73,8 @@ class Game < ActiveRecord::Base
   private
 
   def validates_teams
-    if self.home_team && self.away_team && self.home_team.id == self.away_team.id
-      self.errors.add(:away_team, "Away team should be diferent of Home team")
+    if home_team && away_team && home_team.id.equal?(away_team.id)
+      errors.add(:away_team, "Away team should be diferent of Home team")
     end
   end
 
